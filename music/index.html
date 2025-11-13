@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modern Music Player</title>
+  <link rel="stylesheet" href="music.css" />
+</head>
+<body>
+  <div class="music-app">
+    <!-- animated light particles behind the player -->
+    <div class="lights" aria-hidden="true">
+      <span class="light l1"></span>
+      <span class="light l2"></span>
+      <span class="light l3"></span>
+      <span class="light l4"></span>
+      <span class="light l5"></span>
+    </div>
+    <header>
+      <h1>🎶 My Music Player</h1>
+    </header>
+
+    <div class="player">
+      <div class="album-art">
+        <img id="cover" src="images/song1.jpg" alt="Album Art" />
+      </div>
+
+      <div class="song-info">
+        <h2 id="title">Shape of You</h2>
+        <p id="artist">Ed Sheeran</p>
+      </div>
+
+      <audio id="audio" src="music/song1.mp3"></audio>
+
+      <div class="controls">
+        <button id="prev" aria-label="Previous"><i class="fa fa-backward"></i></button>
+        <button id="play" class="play-btn" aria-label="Play/Pause"><i class="fa fa-play"></i></button>
+        <button id="next" aria-label="Next"><i class="fa fa-forward"></i></button>
+      </div>
+
+      <div class="progress-container" id="progress-container">
+        <div class="progress" id="progress"></div>
+      </div>
+
+      <div class="time">
+        <span id="current-time">0:00</span>
+        <span id="duration">3:45</span>
+      </div>
+
+      <div class="volume-control">
+        <i class="fa fa-volume-up"></i>
+        <input type="range" id="volume" min="0" max="1" step="0.01" value="1" />
+      </div>
+    </div>
+
+    <div class="playlist">
+      <h3>🎵 Playlist</h3>
+
+      <form id="add-song-form" class="add-song" aria-label="Add song">
+        <input id="add-title" type="text" placeholder="Title (required)" required />
+        <input id="add-artist" type="text" placeholder="Artist (required)" required />
+        <input id="add-src" type="text" placeholder="Audio src (e.g. music/song4.mp3 or https://...)" required />
+        <input id="add-cover" type="text" placeholder="Cover src (optional)" />
+        <button id="add-song-btn" type="submit">Add Song</button>
+      </form>
+
+      <ul id="playlist" aria-live="polite"></ul>
+    </div>
+  </div>
+
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <script src="song.js"></script>
+</body>
+</html>
